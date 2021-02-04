@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y tzdata &&  apt-get install -y apache2 l
 
 RUN rm /var/www/html/index.html
 
-COPY /* /var/www/html/
+COPY wordpress /var/www/html/
 
 COPY entrypoint.sh /entrypoint.sh
 
