@@ -9,7 +9,7 @@ pipeline {
 			}
 		stage('push to dockerhub'){
 			steps{
-				withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'pass', usernameVariable: 'user')]){
+				withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]){
 				sh 'docker tag wordpress:1.0.0 raghuram889/wordpress:2.5.0'
 				sh 'docker push raghuram889/wordpress:2.5.0'
 				}
